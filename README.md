@@ -11,4 +11,4 @@ This Discord bot will allow you to do that. Just do a simple &time command and t
 
 *Built for private armada uses*
 
-[![Run on Repl.it](https://repl.it/badge/github/harowo/FuxiDiscord)](https://repl.it/github/harowo/FuxiDiscord)
+Hosted on replit under FuxiDiscord
