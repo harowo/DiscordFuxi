@@ -7,8 +7,15 @@ This Discord bot will allow you to do that. Just do a simple &time command and t
 > Features
 - Check MA time against score
 - Help for Sim Battle
+- Abyss reminder
 
 
-*Built for private armada uses*
+# Dependencies
+
+run ```npm install```
+- discord.js
+- cron
+
+*Built for private armada uses*<br><br>
 
 Hosted on replit under FuxiDiscord
