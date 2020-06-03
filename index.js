@@ -1,15 +1,21 @@
 // Extract the required classes from the discord.js module
 const { Client, MessageAttachment } = require('discord.js');
 const message = require('discord.js')
+const cron = require('cron');
 // Create an instance of a Discord client
 const client = new Client()
-// connect to server
-const keepAlive = require('./server');
+
+// server
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => res.send('Fuxi is alive!'));
+app.listen(port, () => console.log(`http://localhost:${port}`));
+
 // login
 require('dotenv').config()
 var bot_token = process.env.DISCORD_BOT_TOKEN;
-console.log(bot_token);
-keepAlive();
 client.login(bot_token)
 
 
@@ -18,7 +24,7 @@ client.on("ready", () => {
   console.log("Connected as " + client.user.tag)
   // set status to watching hair fall off
   client.user.setActivity("hair fall off [&help]", {type: "WATCHING"})
-});
+});~
 
 // shinn easter egg
 
@@ -173,6 +179,17 @@ function timeCommand(receivedMessage = null, argument = "5:00"){
   
 }
 
+// Abyss reminder
+CRON_TZ="Asia/Singapore"
+let scheduledMessage = new cron.CronJob('0 12 * * 2,6', test => {
+  // This runs every Tue and Sun at 20:00:00
+  // 0000 Thu is 1600 Wed
+  let abyss_channel = client.channels.cache.get(`675356163432513536`)
+  abyss_channel.send("Abyss pong!! <@" + '244015110836846603' + ">" + " and <@" + '171283450949533696' + ">")
+  // pings miracle- and erine
+});
+
+scheduledMessage.start()
 
 // &score
 function scoreCommand(receivedMessage, argument) {
