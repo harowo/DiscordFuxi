@@ -1,11 +1,10 @@
 // Extract the required classes from the discord.js module
 const { Client, MessageAttachment } = require('discord.js');
 const message = require('discord.js')
-const cron = require('cron');
 // Create an instance of a Discord client
 const client = new Client()
+const cron = require('cron');
 
-// server
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -106,6 +105,18 @@ client.on("message", message => {
   }
 });
 
+// Abyss reminder
+//CRON_TZ="Asia/Singapore"
+let scheduledMessage = new cron.CronJob('0 12 * * 0,3', test => {
+  // This runs every Tue and Sun at 20:00:00
+  // 2000 local is 1200 
+  let abyss_channel = client.channels.cache.get(`675356163432513536`)
+  abyss_channel.send("Abyss pong!! <@" + '244015110836846603' + ">" + " and <@" + '171283450949533696' + ">")
+  // pings miracle- and erine
+});
+
+scheduledMessage.start()
+
 /* experimental
 
 client.on("message", message => {
@@ -160,7 +171,7 @@ function helpCommand(receivedMessage, argument) {
 function timeCommand(receivedMessage = null, argument = "5:00"){
 
   if(argument == "5:00"){ // check whether the argument match time format 5:00
-    receivedMessage.channel.send(`${receivedMessage.author} ` + argument + `: ${Math.floor(38336 / 1.2) } (UP: 38336)`); 
+    receivedMessage.channel.send(`${receivedMessage.author} ` + argument + ` is approximately: `+ `${Math.floor(38336 / 1.2) } (UP: 38336)`); 
     return ;
   }
 
@@ -175,31 +186,19 @@ function timeCommand(receivedMessage = null, argument = "5:00"){
   const total_seconds_spent = 300 - seconds - (minutes * 60);
   const up_score = 38336 - (64 * total_seconds_spent);
   const score = Math.floor(up_score / 1.2); 
-  receivedMessage.channel.send(`${receivedMessage.author} ` + argument + `: ${score} (UP: ${up_score})`);
+  receivedMessage.channel.send(`${receivedMessage.author} ` + argument + ` is approximately: ` + `${score} (UP: ${up_score})`);
   
 }
-
-// Abyss reminder
-CRON_TZ="Asia/Singapore"
-let scheduledMessage = new cron.CronJob('0 12 * * 2,6', test => {
-  // This runs every Tue and Sun at 20:00:00
-  // 0000 Thu is 1600 Wed
-  let abyss_channel = client.channels.cache.get(`675356163432513536`)
-  abyss_channel.send("Abyss pong!! <@" + '244015110836846603' + ">" + " and <@" + '171283450949533696' + ">")
-  // pings miracle- and erine
-});
-
-scheduledMessage.start()
 
 // &score
 function scoreCommand(receivedMessage, argument) {
   if (score.toString().includes(argument)) {  // check if argument is in array score
       arrIndex = score.indexOf(score.find(element => element == argument));
-      receivedMessage.channel.send(`${receivedMessage.author} ` + "This score returns the time: " + `${times[arrIndex]}, where score is: ` + `${score[arrIndex]}` + " (UP: " + `${UPscore[arrIndex]}` + ")"); // output: @author time: score (UP: UPscore)
+      receivedMessage.channel.send(`${receivedMessage.author} ` + "Time is approximately: " + `${times[arrIndex]}, where score is approximately: ` + `${score[arrIndex]}` + " (UP: " + `${UPscore[arrIndex]}` + ")");
     }
   else if (UPscore.toString().includes(argument)) {   // check if argument is in array UPscore
     arrIndex = UPscore.indexOf(UPscore.find(element => element == argument));
-    receivedMessage.channel.send(`${receivedMessage.author} ` + "This score returns the time: " + `${times[arrIndex]}, where score is: ` + `${score[arrIndex]}` + " (UP: " + `${UPscore[arrIndex]}` + ")");
+    receivedMessage.channel.send(`${receivedMessage.author} ` + "Time is approximately: " + `${times[arrIndex]}, where score is approximately: ` + `${score[arrIndex]}` + " (UP: " + `${UPscore[arrIndex]}` + ")");
   }
   else {
     receivedMessage.channel.send("That is not a valid score!!")
