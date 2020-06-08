@@ -4,6 +4,7 @@ const message = require('discord.js')
 // Create an instance of a Discord client
 const client = new Client()
 const cron = require('cron');
+const doggoResponses = ["https://cdn.discordapp.com/attachments/561410805166243887/714901249367081011/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/719159065078530108/unknown.png"];
 
 const express = require('express');
 const app = express();
@@ -29,11 +30,11 @@ client.on("ready", () => {
 
 client.on("message", message => {
   // If the message is "&shinn"
-  if (message.content.toLowerCase() == "&shinn") {
+  if (message.content.toLowerCase() == "shinn") {
     // Create the attachment using MessageAttachment
     const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/490738898067259396/714022393823232020/unknown.png");
     // Send the attachment in the message channel
-    message.channel.send(`${message.author} 自闭のShinn`, attachment);
+    message.channel.send(`自闭のShinn`, attachment);
   }
 });
 
@@ -41,11 +42,11 @@ client.on("message", message => {
 
 client.on("message", message => {
   // If the message is "&doggo"
-  if (message.content.toLowerCase() == "&doggo") {
+  if (message.content.toLowerCase() == "doggo") {
     // Create the attachment using MessageAttachment
-    const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/561410805166243887/714901249367081011/unknown.png");
+    var response = doggoResponses [Math.floor(Math.random()*doggoResponses .length)];
     // Send the attachment in the message channel
-    message.channel.send(attachment);
+    message.channel.send(response);
   }
 });
 
@@ -64,7 +65,7 @@ client.on("message", message => {
 // shinn dalao
 
 client.on("message", message => {
-  if (message.content.toLowerCase() == "shinn") {
+  if (message.content.toLowerCase() == "dalao") {
     message.channel.send("<:serveteadalao:630456608173981709>")
   }
 });
@@ -105,27 +106,38 @@ client.on("message", message => {
   }
 });
 
-// Abyss reminder
+// Abyss reminder in Sky
 //CRON_TZ="Asia/Singapore"
 let scheduledMessage = new cron.CronJob('0 12 * * 0,3', test => {
   // This runs every Tue and Sun at 20:00:00
   // 2000 local is 1200 
   let abyss_channel = client.channels.cache.get(`675356163432513536`)
-  abyss_channel.send("Abyss pong!! <@" + '244015110836846603' + ">" + " and <@" + '171283450949533696' + ">")
-  // pings miracle- and erine
+  abyss_channel.send("Abyss pong!! <@" + '719521678035648622' + ">")
+  // pings Abyss Ping role
 });
 
-scheduledMessage.start()
+// Abyss reminder in 233
+let abyssTwothreethree = new cron.CronJob('0 10 * * 0,3', test => {
+  // This runs every Tue and Sun at 18:00:00
+  // 1800 local is 1000 
+  let huangwu_zh = client.channels.cache.get(`561934025753886721`)
+  const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/672091622619480066/715150933297987604/image0.jpg");
+  huangwu_zh.send(attachment)
+});
 
 /* experimental
-
-client.on("message", message => {
-  if (message.content.toLowerCase() == "crossdress") {
-    message.channel.send("Oi <@" + '471300810194681866' + ">") // ping hibiki
-  }
+let scheduledXdress = new cron.CronJob('* * * * *', test => {
+  // This runs every Tue and Sun at 20:00:00
+  // 2000 local is 1200 
+  let abyss_channel = client.channels.cache.get(`675356163432513536`)
+  abyss_channel.send("crossdress <@" + '471300810194681866' + ">")
+  // pings hibiki
 });
+scheduledXdress.start()
 */
 
+scheduledMessage.start()
+abyssTwothreethree.start()
 
 client.on('message', (receivedMessage) => {
   if (receivedMessage.author == client.user) { // Prevent bot from responding to its own messages
