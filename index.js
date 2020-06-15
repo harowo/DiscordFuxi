@@ -1,11 +1,10 @@
 // Extract the required classes from the discord.js module
 const { Client, MessageAttachment } = require('discord.js');
-const message = require('discord.js')
+const Message = require('discord.js')
+
+const cron = require('cron');
 // Create an instance of a Discord client
 const client = new Client()
-const cron = require('cron');
-const doggoResponses = ["https://cdn.discordapp.com/attachments/561410805166243887/714901249367081011/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/719159065078530108/unknown.png"];
-
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -26,10 +25,10 @@ client.on("ready", () => {
   client.user.setActivity("hair fall off [&help]", {type: "WATCHING"})
 });~
 
-// shinn easter egg
+// shinn
 
 client.on("message", message => {
-  // If the message is "&shinn"
+  // If the message is "shinn"
   if (message.content.toLowerCase() == "shinn") {
     // Create the attachment using MessageAttachment
     const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/490738898067259396/714022393823232020/unknown.png");
@@ -38,10 +37,35 @@ client.on("message", message => {
   }
 });
 
+// Eli
+
+client.on("message", message => {
+  // If the message is "eli"
+  if (message.content.toLowerCase() == "eli") {
+    // Create the attachment using MessageAttachment
+    const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/646259831560208385/721595038517428275/unknown.png");
+    // Send the attachment in the message channel
+    message.channel.send(attachment);
+  }
+});
+
+// Big Crit
+
+client.on("message", message => {
+  // If the message is "很黄"
+  if (message.content == "很黄") {
+    // Create the attachment using MessageAttachment
+    const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/646259831560208385/721884231948697611/unknown.png");
+    // Send the attachment in the message channel
+    message.channel.send(attachment);
+  }
+});
+
 // Doggo scary
 
 client.on("message", message => {
-  // If the message is "&doggo"
+  // If the message is "doggo"
+  var doggoResponses = ["https://cdn.discordapp.com/attachments/561410805166243887/714901249367081011/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/719159065078530108/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/721360974514356264/unknown.png"];
   if (message.content.toLowerCase() == "doggo") {
     // Create the attachment using MessageAttachment
     var response = doggoResponses [Math.floor(Math.random()*doggoResponses .length)];
@@ -62,11 +86,19 @@ client.on("message", message => {
   }
 });
 
-// shinn dalao
+// dalao emote
 
 client.on("message", message => {
   if (message.content.toLowerCase() == "dalao") {
     message.channel.send("<:serveteadalao:630456608173981709>")
+  }
+});
+
+// miraface emote
+
+client.on("message", message => {
+  if (message.content.toLowerCase() == "mira") {
+    message.channel.send("<:MiraFace:681089574499516500>")
   }
 });
 
@@ -108,21 +140,30 @@ client.on("message", message => {
 
 // Abyss reminder in Sky
 //CRON_TZ="Asia/Singapore"
-let scheduledMessage = new cron.CronJob('0 12 * * 0,3', test => {
+let scheduledMessage = new cron.CronJob('00 12 * * 0,3', test => {
   // This runs every Tue and Sun at 20:00:00
   // 2000 local is 1200 
   let abyss_channel = client.channels.cache.get(`675356163432513536`)
-  abyss_channel.send("Abyss pong!! <@" + '719521678035648622' + ">")
+  abyss_channel.send("Abyss ending today!! " + '<@&719519030012018728>')
   // pings Abyss Ping role
 });
 
 // Abyss reminder in 233
-let abyssTwothreethree = new cron.CronJob('0 10 * * 0,3', test => {
+let abyssTwothreethree = new cron.CronJob('0 12 * * 0,3', test => {
   // This runs every Tue and Sun at 18:00:00
   // 1800 local is 1000 
   let huangwu_zh = client.channels.cache.get(`561934025753886721`)
   const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/672091622619480066/715150933297987604/image0.jpg");
   huangwu_zh.send(attachment)
+});
+
+// Abyss reminder in acronym
+let acronymAbyss = new cron.CronJob('00 12 * * 0,3', test => {
+  // This runs every Tue and Sun at 20:00:00
+  // 2000 local is 1200 
+  let general_channel = client.channels.cache.get(`486874570532585483`)
+  general_channel.send("you need the crystals, climb abyss! " + '<@&721737831357349959>')
+  // pings Abyss Ping role
 });
 
 /* experimental
@@ -138,6 +179,7 @@ scheduledXdress.start()
 
 scheduledMessage.start()
 abyssTwothreethree.start()
+acronymAbyss.start()
 
 client.on('message', (receivedMessage) => {
   if (receivedMessage.author == client.user) { // Prevent bot from responding to its own messages
@@ -175,7 +217,7 @@ function helpCommand(receivedMessage, argument) {
   } else if(argument.length > 0) {
     receivedMessage.channel.send("It looks like you might need help with " + argument + ". But that is out of my capability as a novice bot :(")
   } else{
-    receivedMessage.channel.send("Type &help [question] for more detailed help\n\nType &time to check Memorial Arena timing\n\nType &sim to get Sim Battle help\n\nType &swipe to know best offer in game (myr/sgd/php)s\n\nType &bis to know the best build") //help message
+    receivedMessage.channel.send("Type &help [question] for more detailed help\n\nType &time/&score to check Memorial Arena timing\n\nType &swipe to know best offer in game (myr/sgd/php)\n\nType &bis to know the best build") //help message
 }
 }
 
