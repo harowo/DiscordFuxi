@@ -6,7 +6,7 @@ This Discord bot will allow you to do that. Just do a simple &time command and t
 
 > Features
 - Check MA time against score
-- Help for Sim Battle
+- Message reaction
 - Abyss reminder
 
 
