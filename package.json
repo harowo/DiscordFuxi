@@ -1,0 +1,23 @@
+{
+  "name": "fuxi_heroku",
+  "version": "1.0.0",
+  "description": "discord bot with multiple functions",
+  "main": "index.js",
+  "dependencies": {
+    "client": "^0.0.1",
+    "cron": "^1.8.2",
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "node.js": "0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "&ping"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harowo/DiscordFuxi/tree/master"
+  },
+  "author": "erine#6421",
+  "license": "ISC"
+}

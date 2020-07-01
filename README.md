@@ -8,17 +8,9 @@ This Discord bot will allow you to do that. Just do a simple &time command and t
 - Check MA time against score
 - Message reaction
 - Abyss reminder
+- Score list (soon)
 
-
-# Dependencies
-
-run ```npm install```
-- discord.js
-- cron
-- dotenv
-- express
-- client
 
 *Built for private armada uses*<br><br>
 
-Hosted on replit under FuxiDiscord
+
