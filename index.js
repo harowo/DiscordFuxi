@@ -4,8 +4,6 @@ const Message = require('discord.js')
 const cron = require('cron');
 // Create an instance of a Discord client
 const client = new Client()
-const express = require('express');
-const app = express();
 const http = require('http');
 const port = 3000;
 http.createServer().listen(port);
