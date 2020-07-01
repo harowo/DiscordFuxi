@@ -124,14 +124,14 @@ let acronymAbyss = new cron.CronJob('00 12 * * 0,3', test => {
 });
 
 // experimental
-let scheduledXdress = new cron.CronJob('11 15 * *', test => {
+let cronTest = new cron.CronJob('11 14 * * *', test => {
   // This runs every Tue and Sun at 20:00:00
   // 2000 local is 1200 
   let bot_test = client.channels.cache.get(`596785780953841694`)
   bot_test.send("cron test")
   
 });
-scheduledXdress.start()
+cronTest.start()
 
 
 scheduledMessage.start()
