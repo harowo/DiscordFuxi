@@ -14,3 +14,4 @@ This Discord bot will allow you to do that. Just do a simple &time command and t
 *Built for private armada uses*<br><br>
 
 
+Hosted on Heroku
