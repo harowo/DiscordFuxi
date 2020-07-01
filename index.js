@@ -98,7 +98,7 @@ client.on("message", message => {
 // Abyss reminder in Sky
 //CRON_TZ="Asia/Singapore"
 let scheduledMessage = new cron.CronJob('00 12 * * 0,3', test => {
-  // This runs every Tue and Sun at 20:00:00
+  // This runs every Wed and Sun at 20:00:00
   // 2000 local is 1200 
   let abyss_channel = client.channels.cache.get(`675356163432513536`)
   abyss_channel.send("Abyss ending today!! " + '<@&719519030012018728>')
@@ -107,7 +107,7 @@ let scheduledMessage = new cron.CronJob('00 12 * * 0,3', test => {
 
 // Abyss reminder in 233
 let abyssTwothreethree = new cron.CronJob('0 12 * * 0,3', test => {
-  // This runs every Tue and Sun at 18:00:00
+  // This runs every Wed and Sun at 20:00:00
   // 1800 local is 1000 
   let huangwu_zh = client.channels.cache.get(`561934025753886721`)
   const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/672091622619480066/715150933297987604/image0.jpg");
@@ -116,7 +116,7 @@ let abyssTwothreethree = new cron.CronJob('0 12 * * 0,3', test => {
 
 // Abyss reminder in acronym
 let acronymAbyss = new cron.CronJob('00 12 * * 0,3', test => {
-  // This runs every Tue and Sun at 20:00:00
+  // This runs every Wed and Sun at 20:00:00
   // 2000 local is 1200 
   let general_channel = client.channels.cache.get(`486874570532585483`)
   general_channel.send("you need the crystals, climb abyss! " + '<@&721737831357349959>')
@@ -125,7 +125,6 @@ let acronymAbyss = new cron.CronJob('00 12 * * 0,3', test => {
 
 /* experimental
 let cronTest = new cron.CronJob('00 12 * * *', test => {
-  // This runs every Tue and Sun at 20:00:00
   // 2000 local is 1200 
   let bot_test = client.channels.cache.get(`596785780953841694`)
   bot_test.send("cron test")
