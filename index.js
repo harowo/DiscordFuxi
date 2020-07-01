@@ -8,10 +8,6 @@ const http = require('http');
 const port = 3000;
 http.createServer().listen(port);
 
-bot.on('error', err => {
-  console.log(err);
-})
-
 // login
 require('dotenv').config()
 var bot_token = process.env.DISCORD_BOT_TOKEN;
