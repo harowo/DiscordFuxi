@@ -123,16 +123,16 @@ let acronymAbyss = new cron.CronJob('00 12 * * 0,3', test => {
   // pings Abyss Ping role
 });
 
-/* experimental
-let scheduledXdress = new cron.CronJob('* * * * *', test => {
+// experimental
+let scheduledXdress = new cron.CronJob('09 15 * *', test => {
   // This runs every Tue and Sun at 20:00:00
   // 2000 local is 1200 
-  let abyss_channel = client.channels.cache.get(`675356163432513536`)
-  abyss_channel.send("crossdress <@" + '471300810194681866' + ">")
+  let bot_test = client.channels.cache.get(`596785780953841694`)
+  bot_test.send("crossdress <@" + '471300810194681866' + ">")
   // pings hibiki
 });
 scheduledXdress.start()
-*/
+
 
 scheduledMessage.start()
 abyssTwothreethree.start()
