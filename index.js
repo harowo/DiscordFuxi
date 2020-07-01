@@ -123,8 +123,8 @@ let acronymAbyss = new cron.CronJob('00 12 * * 0,3', test => {
   // pings Abyss Ping role
 });
 
-// experimental
-let cronTest = new cron.CronJob('24 15 * * *', test => {
+/* experimental
+let cronTest = new cron.CronJob('00 12 * * *', test => {
   // This runs every Tue and Sun at 20:00:00
   // 2000 local is 1200 
   let bot_test = client.channels.cache.get(`596785780953841694`)
@@ -132,7 +132,7 @@ let cronTest = new cron.CronJob('24 15 * * *', test => {
   
 });
 cronTest.start()
-
+*/
 
 scheduledMessage.start()
 abyssTwothreethree.start()
