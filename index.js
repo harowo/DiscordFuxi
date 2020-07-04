@@ -114,15 +114,6 @@ let abyssTwothreethree = new cron.CronJob('0 12 * * 0,3', test => {
   huangwu_zh.send(attachment)
 });
 
-// Abyss reminder in acronym
-let acronymAbyss = new cron.CronJob('00 12 * * 0,3', test => {
-  // This runs every Wed and Sun at 20:00:00
-  // 2000 local is 1200 
-  let general_channel = client.channels.cache.get(`486874570532585483`)
-  general_channel.send("you need the crystals, climb abyss! " + '<@&721737831357349959>')
-  // pings Abyss Ping role
-});
-
 /* experimental
 let cronTest = new cron.CronJob('00 12 * * *', test => {
   // 2000 local is 1200 
@@ -135,7 +126,7 @@ cronTest.start()
 
 scheduledMessage.start()
 abyssTwothreethree.start()
-acronymAbyss.start()
+
 
 client.on('message', (receivedMessage) => {
   if (receivedMessage.author == client.user) { // Prevent bot from responding to its own messages
