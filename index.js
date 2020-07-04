@@ -79,7 +79,7 @@ client.on("message", message => {
     message.channel.send(`${message.author} Pls spend wisely (ty Holiday's cadet)`, attachment);
   } else if (message.content.toLowerCase() == "&swipe php") {
     // Create the attachment using MessageAttachment
-    const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/575004401551278105/727451161849888808/unknown.png");
+    const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/575004401551278105/728912633532645396/unknown.png");
     // Send the attachment in the message channel
     message.channel.send(`${message.author} Pls spend wisely (ty NeonGenesis)`, attachment);
   } else if (message.content.toLowerCase() == "hecchi") {
