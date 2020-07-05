@@ -29,7 +29,7 @@ client.on('message', message => {
 });
 
 // Doggo words
-var doggoResponses = ["https://cdn.discordapp.com/attachments/561410805166243887/714901249367081011/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/719159065078530108/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/721360974514356264/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/726963729543069726/image0.png", "https://cdn.discordapp.com/attachments/653641484834439169/726963730461753405/image1.png"];
+var doggoWords = ["https://cdn.discordapp.com/attachments/561410805166243887/714901249367081011/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/719159065078530108/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/721360974514356264/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/726963729543069726/image0.png", "https://cdn.discordapp.com/attachments/653641484834439169/726963730461753405/image1.png", "https://cdn.discordapp.com/attachments/561410805166243887/729329487074033664/unknown.png"];
 
 // msg react
 
@@ -38,24 +38,15 @@ client.on("message", message => {
         return
     }
   // If the message is "shinn"
-  else if (message.content.toLowerCase() == "&shinn") {
-    // Create the attachment using MessageAttachment
-    const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/490738898067259396/714022393823232020/unknown.png");
-    // Send the attachment in the message channel
-    message.channel.send(`自闭のShinn`, attachment);
+  else if (message.content.toLowerCase() == "shinn") {
+    message.channel.send("自闭のShinn\nhttps://cdn.discordapp.com/attachments/490738898067259396/714022393823232020/unknown.png");
   } else if (message.content.toLowerCase() == "eli") {
-    // Create the attachment using MessageAttachment
-    const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/646259831560208385/721595038517428275/unknown.png");
-    // Send the attachment in the message channel
-    message.channel.send(attachment);
+    message.channel.send("https://cdn.discordapp.com/attachments/646259831560208385/721595038517428275/unknown.png");
   } else if (message.content == "很黄") {
-    // Create the attachment using MessageAttachment
-    const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/653641484834439169/724443693188251738/unknown.png");
-    // Send the attachment in the message channel
-    message.channel.send(attachment);
+    message.channel.send("**巨大暴击**\nhttps://cdn.discordapp.com/attachments/653641484834439169/724443693188251738/unknown.png");
   } else if (message.content.toLowerCase() == "doggo") {
     // Create the attachment using MessageAttachment
-    var response = doggoResponses [Math.floor(Math.random()*doggoResponses .length)];
+    var response = doggoWords [Math.floor(Math.random()*doggoWords .length)];
     // Send the attachment in the message channel
     message.channel.send(response);
   } else if (message.content.toLowerCase() == "&bis") {
@@ -65,30 +56,23 @@ client.on("message", message => {
     message.channel.send(`${message.author} There are no BiS for every valk, but here are some general builds`, attachment);
   } else if (message.content.toLowerCase() == "dalao") {
     message.channel.send("<:serveteadalao:630456608173981709>")
+  } else if (message.content.toLowerCase() == "mira") {
+    message.channel.send("<:MiraFace:681089574499516500>")
   } else if (message.content.toLowerCase() == "&swipe sgd") {
-    // Create the attachment using MessageAttachment
-    const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/653641484834439169/714907595789303869/unknown.png");
-    // Send the attachment in the message channel
-    message.channel.send(`${message.author} Pls spend wisely`, attachment);
+    message.channel.send("${message.author} Pls spend wisely (ty erine)\nhttps://cdn.discordapp.com/attachments/653641484834439169/714907595789303869/unknown.png");
   } else if (message.content.toLowerCase() == "&swipe myr") {
-    // Create the attachment using MessageAttachment
-    const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/622385222541115403/654583837749280768/unknown.png");
-    // Send the attachment in the message channel
-    message.channel.send(`${message.author} Pls spend wisely (ty Holiday's cadet)`, attachment);
+    message.channel.send("${message.author} Pls spend wisely (ty Holiday's cadet)https://cdn.discordapp.com/attachments/622385222541115403/654583837749280768/unknown.png");
   } else if (message.content.toLowerCase() == "&swipe php") {
-    // Create the attachment using MessageAttachment
-    const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/575004401551278105/728912633532645396/unknown.png");
-    // Send the attachment in the message channel
-    message.channel.send(`${message.author} Pls spend wisely (ty NeonGenesis)`, attachment);
+    message.channel.send("${message.author} Pls spend wisely (ty NeonGenesis)\nhttps://cdn.discordapp.com/attachments/575004401551278105/727451161849888808/unknown.png");
   } else if (message.content.toLowerCase() == "hecchi") {
     // Create the attachment using MessageAttachment
     const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/646259831560208385/722335937652195428/image0.jpg");
     // Send the attachment in the message channel
     message.channel.send(`nom nom honey felix`, attachment);
   } else if (message.content.toLowerCase() == "taria") {
-    // Create the attachment using MessageAttachment
-    const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/561577033214197780/727245141185921024/unknown.png");
-    message.channel.send(attachment);
+    message.channel.send("https://cdn.discordapp.com/attachments/561577033214197780/727245141185921024/unknown.png");
+  } else if (message.content.toLowerCase() == "人才") {
+    message.channel.send("https://cdn.discordapp.com/attachments/728859876700192769/729328285309468712/9k.png");
   } 
 });
 
@@ -96,7 +80,7 @@ client.on("message", message => {
 // Abyss reminder in Sky
 //CRON_TZ="Asia/Singapore"
 let scheduledMessage = new cron.CronJob('00 12 * * 0,3', test => {
-  // This runs every Wed and Sun at 20:00:00
+  // This runs every Tue and Sun at 20:00:00
   // 2000 local is 1200 
   let abyss_channel = client.channels.cache.get(`675356163432513536`)
   abyss_channel.send("Abyss ending today!! " + '<@&719519030012018728>')
@@ -105,26 +89,36 @@ let scheduledMessage = new cron.CronJob('00 12 * * 0,3', test => {
 
 // Abyss reminder in 233
 let abyssTwothreethree = new cron.CronJob('0 12 * * 0,3', test => {
-  // This runs every Wed and Sun at 20:00:00
+  // This runs every Tue and Sun at 18:00:00
   // 1800 local is 1000 
   let huangwu_zh = client.channels.cache.get(`561934025753886721`)
   const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/672091622619480066/715150933297987604/image0.jpg");
   huangwu_zh.send(attachment)
 });
 
-/* experimental
-let cronTest = new cron.CronJob('00 12 * * *', test => {
+// Abyss reminder in acronym
+let acronymAbyss = new cron.CronJob('00 12 * * 0,3', test => {
+  // This runs every Tue and Sun at 20:00:00
   // 2000 local is 1200 
-  let bot_test = client.channels.cache.get(`596785780953841694`)
-  bot_test.send("cron test")
-  
+  let general_channel = client.channels.cache.get(`486874570532585483`)
+  general_channel.send("you need the crystals, climb abyss! " + '<@&721737831357349959>')
+  // pings Abyss Ping role
 });
-cronTest.start()
+
+/* experimental
+let scheduledXdress = new cron.CronJob('* * * * *', test => {
+  // This runs every Tue and Sun at 20:00:00
+  // 2000 local is 1200 
+  let abyss_channel = client.channels.cache.get(`675356163432513536`)
+  abyss_channel.send("crossdress <@" + '471300810194681866' + ">")
+  // pings hibiki
+});
+scheduledXdress.start()
 */
 
 scheduledMessage.start()
 abyssTwothreethree.start()
-
+acronymAbyss.start()
 
 client.on('message', (receivedMessage) => {
   if (receivedMessage.author == client.user) { // Prevent bot from responding to its own messages
