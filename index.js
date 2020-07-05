@@ -38,7 +38,7 @@ client.on("message", message => {
         return
     }
   // If the message is "shinn"
-  else if (message.content.toLowerCase() == "shinn") {
+  else if (message.content.toLowerCase() == "&shinn") {
     // Create the attachment using MessageAttachment
     const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/490738898067259396/714022393823232020/unknown.png");
     // Send the attachment in the message channel
@@ -65,8 +65,6 @@ client.on("message", message => {
     message.channel.send(`${message.author} There are no BiS for every valk, but here are some general builds`, attachment);
   } else if (message.content.toLowerCase() == "dalao") {
     message.channel.send("<:serveteadalao:630456608173981709>")
-  } else if (message.content.toLowerCase() == "mira") {
-    message.channel.send("<:MiraFace:681089574499516500>")
   } else if (message.content.toLowerCase() == "&swipe sgd") {
     // Create the attachment using MessageAttachment
     const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/653641484834439169/714907595789303869/unknown.png");
