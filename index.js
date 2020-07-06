@@ -59,11 +59,11 @@ client.on("message", message => {
   } else if (message.content.toLowerCase() == "mira") {
     message.channel.send("<:MiraFace:681089574499516500>")
   } else if (message.content.toLowerCase() == "&swipe sgd") {
-    message.channel.send("${message.author} Pls spend wisely (ty erine)\nhttps://cdn.discordapp.com/attachments/653641484834439169/714907595789303869/unknown.png");
+    message.channel.send(`${message.author} Pls spend wisely (ty erine)\nhttps://cdn.discordapp.com/attachments/653641484834439169/714907595789303869/unknown.png`);
   } else if (message.content.toLowerCase() == "&swipe myr") {
-    message.channel.send("${message.author} Pls spend wisely (ty Holiday's cadet)https://cdn.discordapp.com/attachments/622385222541115403/654583837749280768/unknown.png");
+    message.channel.send(`${message.author} Pls spend wisely (ty Holiday's cadet)\nhttps://cdn.discordapp.com/attachments/622385222541115403/654583837749280768/unknown.png`);
   } else if (message.content.toLowerCase() == "&swipe php") {
-    message.channel.send("${message.author} Pls spend wisely (ty NeonGenesis)\nhttps://cdn.discordapp.com/attachments/575004401551278105/727451161849888808/unknown.png");
+    message.channel.send(`${message.author} Pls spend wisely (ty NeonGenesis)\nhttps://cdn.discordapp.com/attachments/575004401551278105/727451161849888808/unknown.png`);
   } else if (message.content.toLowerCase() == "hecchi") {
     // Create the attachment using MessageAttachment
     const attachment = new MessageAttachment("https://cdn.discordapp.com/attachments/646259831560208385/722335937652195428/image0.jpg");
