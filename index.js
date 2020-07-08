@@ -43,7 +43,7 @@ client.on("message", message => {
   } else if (message.content.toLowerCase() == "eli") {
     message.channel.send("https://cdn.discordapp.com/attachments/646259831560208385/721595038517428275/unknown.png");
   } else if (message.content == "很黄") {
-    message.channel.send("**巨大暴击**\nhttps://cdn.discordapp.com/attachments/653641484834439169/724443693188251738/unknown.png");
+    message.channel.send("https://cdn.discordapp.com/attachments/653641484834439169/724443693188251738/unknown.png");
   } else if (message.content.toLowerCase() == "doggo") {
     // Create the attachment using MessageAttachment
     var response = doggoWords [Math.floor(Math.random()*doggoWords .length)];
