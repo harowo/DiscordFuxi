@@ -28,8 +28,9 @@ client.on('message', message => {
   }
 });
 
-// Doggo words
+// words
 var doggoWords = ["https://cdn.discordapp.com/attachments/561410805166243887/714901249367081011/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/719159065078530108/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/721360974514356264/unknown.png", "https://cdn.discordapp.com/attachments/653641484834439169/726963729543069726/image0.png", "https://cdn.discordapp.com/attachments/653641484834439169/726963730461753405/image1.png", "https://cdn.discordapp.com/attachments/561410805166243887/729329487074033664/unknown.png"];
+var mwLanguage = ["https://cdn.discordapp.com/attachments/561934025753886721/735135301055283250/unknown.png"]
 
 // msg react
 
@@ -76,7 +77,12 @@ client.on("message", message => {
   } else if (message.content.toLowerCase() == "join2") {
     const welcomeMsg = `Hi, if you're keen on joining us\nPlease match your nickname on discord with ingame /nick\nhere's our armada\n\n1. 空の記憶 [Sky of memories] ID: 1024053「Tier V」\n2. おいしい [Oishii] ID: 1000025「Tier V」\n\nif needed further enquiry\nYou can tag @/mod for assistance\nhttps://cdn.discordapp.com/attachments/493764413061464064/610079547442069526/welcome.gif`
     message.channel.send(welcomeMsg)
-  } 
+  } } else if (message.content.toLowerCase() == "mwlanguage") {
+    // Create the attachment using MessageAttachment
+    var response = mwLanguage [Math.floor(Math.random()*mwLanguage .length)];
+    // Send the attachment in the message channel
+    message.channel.send(response);
+  }
 });
 
 
