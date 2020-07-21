@@ -77,7 +77,7 @@ client.on("message", message => {
   } else if (message.content.toLowerCase() == "join2") {
     const welcomeMsg = `Hi, if you're keen on joining us\nPlease match your nickname on discord with ingame /nick\nhere's our armada\n\n1. 空の記憶 [Sky of memories] ID: 1024053「Tier V」\n2. おいしい [Oishii] ID: 1000025「Tier V」\n\nif needed further enquiry\nYou can tag @/mod for assistance\nhttps://cdn.discordapp.com/attachments/493764413061464064/610079547442069526/welcome.gif`
     message.channel.send(welcomeMsg)
-  } } else if (message.content.toLowerCase() == "mwlanguage") {
+  } else if (message.content.toLowerCase() == "mw") {
     // Create the attachment using MessageAttachment
     var response = mwLanguage [Math.floor(Math.random()*mwLanguage .length)];
     // Send the attachment in the message channel
