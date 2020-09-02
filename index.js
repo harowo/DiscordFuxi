@@ -15,7 +15,7 @@ var bot_token = process.env.DISCORD_BOT_TOKEN;
 client.login(bot_token)
 
 client.on("ready", () => {
-  console.log("Connected as " + client.user.tag)
+  console.log("Connected as " + client.user.tag + "v1.1")
   // set status to watching hair fall off
   client.user.setActivity("hair fall off [&help]", {type: "WATCHING"})
 });
