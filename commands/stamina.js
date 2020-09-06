@@ -11,6 +11,7 @@ module.exports = {
         const regenRate = 0.1 // 1 stam regens every 6min
         var currStam = args
         var remainTime = Math.round(((maxStam - currStam) * regenRate) * 10) / 10
+        process.env.TZ = 'Asia/Singapore'
 
         var currDate = new Date(Date.now())
         var nowInms = currDate.getTime()
