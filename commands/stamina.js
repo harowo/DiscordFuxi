@@ -23,7 +23,7 @@ module.exports = {
             return;
         }
         const stamMsg = new Discord.MessageEmbed()
-          .setDescription("It is approximately " + `${remainTime}` + " hours from full stamina.)
+          .setDescription("It is approximately " + `${remainTime}` + " hours from full stamina.")
           .setColor('#0099ff');
 
         message.channel.send(stamMsg)
