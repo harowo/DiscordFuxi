@@ -15,9 +15,11 @@ module.exports = {
           }
         
           const time_regex = /^([0-4]):([0-5][0-9])$/; // check whether the argument match time format (from 0: 00 to 4:59)
+          var time = args.toString().match(time_regex)
         
-          if(args == undefined || !args || !(time = args.toString().match(time_regex))) {
-            message.channel.send("That is not a valid time!!"); return ;
+          if(args == undefined && args != "5:00" || !args || !(time = args.toString().match(time_regex))) {
+            
+            return;
           }
         
           const minutes = time[1];
