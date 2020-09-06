@@ -29,4 +29,7 @@ Approximated UP and non-UP score check
 `&swipe {currency}` shows you the best valued package to purchase
 ![swipe](https://cdn.discordapp.com/attachments/646259831560208385/752189271372333087/unknown.png)
 
+`&stam {value}` tells you how much longer till your stamina will be maxed, asuuming level 85
+![stamina](https://cdn.discordapp.com/attachments/646259831560208385/752192357704794152/unknown.png)
+
 ### _Built for private armada uses_
