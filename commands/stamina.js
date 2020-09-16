@@ -12,18 +12,18 @@ module.exports = {
         var currStam = args
         var remainTime = Math.round(((maxStam - currStam) * regenRate) * 10) / 10
 
-        var currDate = new Date(Date.now())
-        var nowInms = currDate.getTime()
-        var remainTimems = remainTime * 60 * 60 * 1000 // convert remainTime to milliseconds
-        var futureDateTimems = nowInms + remainTimems;
-        var futureTime = new Date(futureDateTimems)
+        //var currDate = new Date(Date.now())
+        //var nowInms = currDate.getTime()
+        //var remainTimems = remainTime * 60 * 60 * 1000 // convert remainTime to milliseconds
+        //var futureDateTimems = nowInms + remainTimems;
+        //var futureTime = new Date(futureDateTimems)
 
         if(args == undefined || !args || args >= maxStam || args < 0) {
             message.channel.send("<:slap:693351841404026890>");
             return;
         }
         const stamMsg = new Discord.MessageEmbed()
-          .setDescription("It is approximately " + `${remainTime}` + " hours from full stamina.\n\nIt will be " + futureTime)
+          .setDescription("It is approximately " + `${remainTime}` + " hours from full stamina.")
           .setColor('#0099ff');
 
         message.channel.send(stamMsg)
