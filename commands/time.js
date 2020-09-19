@@ -28,8 +28,11 @@ module.exports = {
           const up_score = 38336 - (64 * total_seconds_spent);
           const score = Math.floor(up_score / 1.2); 
           const timeMsg = new Discord.MessageEmbed()
+          .setColor('#0099ff')
+          .setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
           .setDescription(args + ` is approximately: ` + `${score} (UP: ${up_score})`)
-          .setColor('#0099ff');
+          .setFooter('In-game value may vary slightly.')
+          .setTimestamp();
           
           message.channel.send(timeMsg);
     }

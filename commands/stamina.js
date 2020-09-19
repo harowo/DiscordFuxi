@@ -23,8 +23,10 @@ module.exports = {
             return;
         }
         const stamMsg = new Discord.MessageEmbed()
-          .setDescription("It is approximately " + `${remainTime}` + " hours from full stamina.")
-          .setColor('#0099ff');
+            .setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
+            .setDescription("It is approximately " + `${remainTime}` + " hours from full stamina.")
+            .setColor('#0099ff')
+            .setTimestamp();
 
         message.channel.send(stamMsg)
     }

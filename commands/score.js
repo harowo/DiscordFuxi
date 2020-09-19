@@ -32,16 +32,22 @@ module.exports = {
         if (args <= 31946 && score.toString().includes(closest)) {  // check if argument is in array score
             arrIndex = score.indexOf(score.find(element => element == closest));
             const scoreMsg = new Discord.MessageEmbed()
+            .setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
             .setDescription("Time is approximately: " + `${times[arrIndex]}\nScore is approximately: ` + `${score[arrIndex]}` + " (UP: " + `${UPscore[arrIndex]}` + ")")
-            .setColor('#0099ff');
+            .setColor('#0099ff')
+            .setFooter('In-game value may vary slightly.')
+            .setTimestamp();
             message.channel.send(scoreMsg)
         }
         
         else if ( args < 38400 && UPscore.toString().includes(closestUP)) {   // check if argument is in array UPscore
             arrIndex = UPscore.indexOf(UPscore.find(element => element == closestUP));
             const scoreMsg = new Discord.MessageEmbed()
+            .setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
             .setDescription("Time is approximately: " + `${times[arrIndex]}\nScore is approximately: ` + `${score[arrIndex]}` + " (UP: " + `${UPscore[arrIndex]}` + ")")
-            .setColor('#0099ff');
+            .setColor('#0099ff')
+            .setFooter('In-game value may vary slightly.')
+            .setTimestamp();
             message.channel.send(scoreMsg)
         }
 
