@@ -3,7 +3,8 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: "bis",
-    description: "General build",
+    description: "Show general build for different types of valk",
+    usage: "",
 
     async run (client, message) {
         

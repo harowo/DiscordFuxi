@@ -4,6 +4,7 @@ const Discord = require('discord.js')
 module.exports = {
     name: "swipe",
     description: "Swipe money",
+    usage: "currency (SGD/MYR/PHP)",
 
     async run (client, message, args) {
         
