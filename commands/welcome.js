@@ -4,6 +4,7 @@ const Discord = require('discord.js')
 module.exports = {
     name: "join",
     description: "Sky welcome msg",
+    usage: "",
 
     async run (client, message) {
         

@@ -8,14 +8,12 @@ const { join } = require('path');
 const Discord = require('discord.js');
 client.commands= new Discord.Collection();
 const fs = require('fs');
- 
+const { prefix } = require('./config.json');
 
 // Create an instance of a Discord client
 const http = require('http');
 const port = 3000;
 http.createServer().listen(port);
-
-const prefix = "&"
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
@@ -24,13 +22,12 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-
 client.on("error", console.error);
 
 client.on("ready", () => {
-  console.log("Connected as " + client.user.tag + " v2")
+  console.log("Connected as " + client.user.tag + " v2.1")
   // set status to watching hair fall off
-  client.user.setActivity("hair fall off", {type: "WATCHING"})
+  client.user.setActivity("hair fall off [&]", {type: "WATCHING"})
 });
 
 

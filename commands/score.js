@@ -3,8 +3,8 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: "score",
-    description: "Check score to time",
-
+    description: "Convert score to time in MA",
+    usage: "5 digit score",
 
 
     async run (client, message, args) {

@@ -1,6 +1,6 @@
 {
   "name": "fuxi_heroku",
-  "version": "1.0.0",
+  "version": "2.1",
   "description": "discord bot with multiple functions",
   "main": "index.js",
   "dependencies": {
@@ -8,6 +8,7 @@
     "cron": "^1.8.2",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
+    "fuse.js": "^6.4.6",
     "moment": "^2.27.0",
     "node.js": "0.0.1-security"
   },
