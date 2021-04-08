@@ -10,8 +10,11 @@ module.exports = {
         
         if(args == "5:00"){ // check whether the argument match time format 5:00
           const fiveMsg = new Discord.MessageEmbed()
+          .setColor('#0099ff')
+          .setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
           .setDescription(args + ` is approximately: `+ `${Math.floor(38336 / 1.2) } (UP: 38336)`)
-          .setColor('#0099ff');
+          .setFooter('In-game value may vary slightly.')
+          .setTimestamp();
           message.channel.send(fiveMsg)
           }
         
