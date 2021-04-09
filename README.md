@@ -37,6 +37,9 @@ Approximated UP and non-UP score check
 
 ## Changelog
 
+- v2.1.1
+  - Added command to share Guide videos to multiple channels at once
+
 - v2.1
   - Removed unnecessary commands
   - Added `help` command

@@ -25,7 +25,7 @@ for(const file of commandFiles){
 client.on("error", console.error);
 
 client.on("ready", () => {
-  console.log("Connected as " + client.user.tag + " v2.1")
+  console.log("Connected as " + client.user.tag + " v2.1.1")
   // set status to watching hair fall off
   client.user.setActivity("hair fall off [&]", {type: "WATCHING"})
 });
@@ -54,7 +54,14 @@ client.on("message", async message => {
           console.error(error);
       }
   }
+
+  // List servers the bot is in
+  //client.guilds.cache.forEach(guild => {
+  //  console.log(`${guild.name} | ${guild.id}`);
+  //})
 })
+
+
 
 // login
 require('dotenv').config()
