@@ -54,7 +54,14 @@ client.on("message", async message => {
           console.error(error);
       }
   }
+
+  // List servers the bot is in
+  //client.guilds.cache.forEach(guild => {
+  //  console.log(`${guild.name} | ${guild.id}`);
+  //})
 })
+
+
 
 // login
 require('dotenv').config()
