@@ -30,19 +30,19 @@ module.exports = {
         // MA Guide
 
         if (args[0] != undefined && args[0].toLowerCase() == "ma") {
-            logChannel.send("Memorial Arena: " + args[1])  // send to logging channel
-            maGuide.send("Memorial Arena: " + args[1])  // send to Sky
-            hbGuide.send("Memorial Arena: " + args[1])  // send to HB
-            ma233Guide.send("Memorial Arena: " + args[1])  // send to 233
+            logChannel.send(`MA Guide shared by ${message.author.username}: ` + args[1])  // send to logging channel
+            maGuide.send(`MA Guide shared by ${message.author.username}: ` + args[1])  // send to Sky
+            hbGuide.send(`MA Guide shared by ${message.author.username}: ` + args[1])  // send to HB
+            ma233Guide.send(`MA Guide shared by ${message.author.username}: ` + args[1])  // send to 233
         }
 
         // Abyss Guide
 
         if (args[0] != undefined && args[0].toLowerCase() == "abyss") {
-            logChannel.send("Abyss: " + args[1])  // send to logging channel
-            generalGuide.send("Abyss: " + args[1])  // send to Sky
-            hbGuide.send("Abyss: " + args[1])  // send to HB
-            abyss233Guide.send("Abyss: " + args[1])  // send to 233
+            logChannel.send(`Abyss Guide shared by ${message.author.username}: ` + args[1])  // send to logging channel
+            generalGuide.send(`Abyss Guide shared by ${message.author.username}: ` + args[1])  // send to Sky
+            hbGuide.send(`Abyss Guide shared by ${message.author.username}: ` + args[1])  // send to HB
+            abyss233Guide.send(`Abyss Guide shared by ${message.author.username}: ` + args[1])  // send to 233
         }
     }
 }
