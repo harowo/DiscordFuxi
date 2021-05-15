@@ -24,7 +24,7 @@ module.exports = {
         //var futureDateTimems = nowInms + remainTimems;
         //var futureTime = new Date(futureDateTimems)
 
-        if(args == undefined || !args || args >= maxStam || args < 0 || capLvl > 85) {
+        if(args == undefined || !args || args >= maxStam || args < 0 || capLvl > 88) {
             message.channel.send("<:slap:693351841404026890>");
             return;
         }
