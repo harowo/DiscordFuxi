@@ -39,6 +39,7 @@ Approximated UP and non-UP score check
 
 - v2.1.2
   - Increased Lvl cap to 88 for `stam` command
+  - Removed `welcome` command
 
 - v2.1.1
   - Added command to share Guide videos to multiple channels at once
